@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 }); /// đây là thay đổi
+
+
+Route::group(['prefix' => 'client', 'namespace' => 'Client', 'as' => 'client.'], function() {
+	Route::get('', 'HomeController@index')->name('index');
+});
