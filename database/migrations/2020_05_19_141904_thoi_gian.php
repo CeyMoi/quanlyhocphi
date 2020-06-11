@@ -6,21 +6,17 @@ use Illuminate\Database\Migrations\Migration;
 
 class ThoiGian extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('thoi_gian', function (Blueprint $table) {
-            $table->integer('ma_sinh_vien');
+            $table->integer('ma_sinh_vien')->unsigned();
 
             $table->date('ngay_dong');
 
-            $table->integer('so_tien');
+            $table->integer('so_tien')->unsigned();
 
-            $table->integer('ma_ke_toan');
+            $table->integer('ma_ke_toan')->unsigned();
 
             $table->primary(['ma_sinh_vien', 'ngay_dong']);
 
@@ -29,11 +25,7 @@ class ThoiGian extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+   
     public function down()
     {
         Schema::dropIfExists('thoi_gian');

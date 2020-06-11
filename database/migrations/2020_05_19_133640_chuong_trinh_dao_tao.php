@@ -6,15 +6,11 @@ use Illuminate\Database\Migrations\Migration;
 
 class ChuongTrinhDaoTao extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('chuong_trinh_dao_tao', function (Blueprint $table) {
-            $table->integer('ma_nganh');
+            $table->integer('ma_nganh')->unsigned();
 
             $table->string('ten_nganh', 100);
 
@@ -22,11 +18,7 @@ class ChuongTrinhDaoTao extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('chuong_trinh_dao_tao');

@@ -6,21 +6,17 @@ use Illuminate\Database\Migrations\Migration;
 
 class Lop extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('lop', function (Blueprint $table) {
-            $table->integer('ma_lop');
+            $table->integer('ma_lop')->unsigned();
 
             $table->string('ten_lop', 100);
 
-            $table->integer('ma_khoa');
+            $table->integer('ma_khoa')->unsigned();
 
-            $table->integer('ma_nganh');
+            $table->integer('ma_nganh')->unsigned();
 
             $table->primary('ma_lop');
 
@@ -32,11 +28,7 @@ class Lop extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('lop');
