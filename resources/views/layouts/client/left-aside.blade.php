@@ -42,7 +42,7 @@
             </li>
             <li>
                 <a href="{{ route('client.logout') }}">
-                    <i class="icon icon-sailing-boat-water purple-text s-18"></i>
+                    <i class="icon icon-user-secret purple-text s-18"></i>
                     <span>Đăng xuất</span>
                 </a>
             </li>

@@ -34,5 +34,7 @@ Route::group(['prefix' => 'client', 'namespace' => 'Client', 'as' => 'client.'],
 			\Auth::guard('sinh_vien')->logout();
 			return redirect()->route('client.login');
 		})->name('logout');
+
+		Route::resource('profile', 'ProfileController')->only(['index']);
 	});
 });
