@@ -45,6 +45,10 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'sinh_vien' => [
+            'driver' => 'session',
+            'provider' => 'sinh_vien'
+        ]
     ],
 
     /*
@@ -68,6 +72,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'sinh_vien' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\SinhVien::class
         ],
 
         // 'users' => [

@@ -17,5 +17,17 @@ Route::get('/', function () {
 
 
 Route::group(['prefix' => 'client', 'namespace' => 'Client', 'as' => 'client.'], function() {
-	Route::get('', 'HomeController@index')->name('index');
+
+	Route::group([
+		'namespace' => 'Auth',
+		'as' => 'auth.',
+		'middleware' => 'guest:sinh_vien'
+	], function() {
+		Route::get('login', 'LoginController@index')->name('login');
+		Route::post('login', 'LoginController@login')->name('login.store');
+	});
+
+	Route::group(['middleware' => 'auth.client'], function() {
+		Route::get('', 'HomeController@index')->name('index');
+	});
 });
