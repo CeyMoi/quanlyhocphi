@@ -29,5 +29,10 @@ Route::group(['prefix' => 'client', 'namespace' => 'Client', 'as' => 'client.'],
 
 	Route::group(['middleware' => 'auth.client'], function() {
 		Route::get('', 'HomeController@index')->name('index');
+
+		Route::get('logout', function() {
+			\Auth::guard('sinh_vien')->logout();
+			return redirect()->route('client.login');
+		})->name('logout');
 	});
 });

@@ -14,7 +14,7 @@
                         <img class="user_avatar" src="{{ asset('assets/client/img/dummy/u2.png') }}" alt="User Image">
                     </div>
                     <div class="float-left info">
-                        <h6 class="font-weight-light mt-2 mb-1">Alexander Pierce</h6>
+                        <h6 class="font-weight-light mt-2 mb-1">{{ auth()->guard('sinh_vien')->user()->ten_sinh_vien }}</h6>
                         <a href="#"><i class="icon-circle text-primary blink"></i> Online</a>
                     </div>
                 </div>
@@ -38,6 +38,12 @@
                 <a href="{{ route('client.index') }}">
                     <i class="icon icon-sailing-boat-water purple-text s-18"></i>
                     <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('client.logout') }}">
+                    <i class="icon icon-sailing-boat-water purple-text s-18"></i>
+                    <span>Đăng xuất</span>
                 </a>
             </li>
         </ul>

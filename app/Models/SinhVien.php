@@ -13,7 +13,7 @@ class SinhVien extends Authenticatable
 
     protected $table = 'sinh_vien';
 
-    protected $primaryKey = null;
+    protected $primaryKey = 'ma_sinh_vien';
 
     public $timestamps = false;
 

@@ -3,10 +3,16 @@
 @section('content')
 <form action="{{ route('client.auth.login.store') }}" method="post">
     {{ csrf_field() }}
+    @if($errors->has('email'))
+        {{ $errors->first('email') }}
+    @endif
     <div class="form-group has-icon"><i class="icon-envelope-o"></i>
         <input type="text" name="email" class="form-control form-control-lg"
                placeholder="Email Address">
     </div>
+    @if($errors->has('password'))
+        {{ $errors->first('password') }}
+    @endif
     <div class="form-group has-icon"><i class="icon-user-secret"></i>
         <input type="password" name="password" class="form-control form-control-lg"
                placeholder="Password">
