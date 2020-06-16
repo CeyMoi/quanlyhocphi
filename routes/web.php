@@ -35,6 +35,7 @@ Route::group(['prefix' => 'client', 'namespace' => 'Client', 'as' => 'client.'],
 			return redirect()->route('client.login');
 		})->name('logout');
 
-		Route::resource('profile', 'ProfileController')->only(['index']);
+		Route::get('profile', 'ProfileController@index')->name('profile.index');
+		Route::put('profile', 'ProfileController@update')->name('profile.update');
 	});
 });
