@@ -28,6 +28,7 @@ Route::group(['prefix' => 'client', 'namespace' => 'Client', 'as' => 'client.'],
 
 		Route::get('profile', 'ProfileController@index')->name('profile.index');
 		Route::put('profile', 'ProfileController@update')->name('profile.update');
+		Route::post('profile/password', 'ProfileController@changePassword')->name('profile.password');
 	});
 });
 

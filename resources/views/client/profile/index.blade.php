@@ -30,19 +30,31 @@
 					<h4 class="card-title">Đổi mật khẩu</h4>
 				</div>
 				<div class="card-body">
-					<form action="{{ route('client.profile.update') }}" method="post">
+					@if (Session::has('success'))
+						<div class="alert alert-success">{{Session::get('success')}}</div>
+					@endif
+					@if (Session::has('error'))
+						<div class="alert alert-success">{{Session::get('error')}}</div>
+					@endif
+					<form action="{{ route('client.profile.password') }}" method="post">
 						{{ csrf_field() }}
 						<div class="form-group">
-							<label for="password_old">Mật khẩu cũ</label>
-							<input type="password" name="password_old" class="form-control">
+							<label for="password">Mật khẩu cũ</label>
+							<input type="password" name="password" class="form-control">
+							@if ($errors->has('password'))
+								<span>{{$errors->first('password')}}</span>
+							@endif
 						</div>
 						<div class="form-group">
 							<label for="password_new">Mật khẩu mới</label>
 							<input type="password" name="password_new" class="form-control">
+							@if ($errors->has('password_new'))
+								<span>{{$errors->first('password_new')}}</span>
+							@endif
 						</div>
 						<div class="form-group">
-							<label for="password_new_confirm">Nhập lại mật khẩu mới</label>
-							<input type="password" name="password_new_confirm" class="form-control">
+							<label for="password_new_confirmation">Nhập lại mật khẩu mới</label>
+							<input type="password" name="password_new_confirmation" class="form-control">
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary">Cập nhật</button>
