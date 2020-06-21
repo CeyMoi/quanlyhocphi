@@ -1,95 +1,88 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang chủ </title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <link href="{{asset('css/menu.css')}}" rel="stylesheet" />
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
 
-            .full-height {
-                height: 100vh;
-            }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
 
-            .position-ref {
-                position: relative;
-            }
+</head>
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+<body>
+  <div class="header">
+    <a href="#" id="menu-action">
+      <i class="fa fa-bars"></i>
+      <span>Close</span>
+    </a>
+    <div class="logo">
+      Trang Chủ
+    </div>
+  </div>
+  <div class="sidebar">
+    <ul>
+      <li><a href="#"><i class="fa fa-desktop"></i><span>Danh sách sinh viên</span></a></li>
+      <li><a href="#"><i class="fa fa-server"></i><span>Danh sách học phí</span></a></li>
+      <li><a href="#"><i class="fa fa-calendar"></i><span></span></a></li>
+      <li><a href="#"><i class="fa fa-envelope-o"></i><span></span></a></li>
+      <li><a href="#"><i class="fa fa-table"></i><span> </span></a></li>
+  </div>
 
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+  <!-- Content -->
+  <div class="main">
+    <div class="hipsum">
+      <div class="jumbotron">
+        <h1 id="hello,-world!">Hello!<a class="anchorjs-link" href="#hello,-world!"><span class="anchorjs-icon"></span></a></h1>
+        <p></p>
+        <p><a class="btn btn-primary" href="#" role="button">Xem chi tiết</a></p>
+      </div>
+      <p></p>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Mã sinh viên</th>
+            <th>Tổng tiền </th>
+            <th>Tình trạng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+      <div class="row">
+        <div class="col-sm-6">
+          <p></p>
         </div>
-    </body>
+        <div class="col-sm-6">
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

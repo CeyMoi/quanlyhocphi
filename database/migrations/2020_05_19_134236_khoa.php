@@ -6,15 +6,11 @@ use Illuminate\Database\Migrations\Migration;
 
 class Khoa extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('khoa', function (Blueprint $table) {
-            $table->integer('ma_khoa');
+            $table->integer('ma_khoa')->unsigned();
 
             $table->string('ten_khoa', 100);
             
@@ -22,11 +18,6 @@ class Khoa extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('khoa');

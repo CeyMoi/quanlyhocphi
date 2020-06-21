@@ -6,19 +6,15 @@ use Illuminate\Database\Migrations\Migration;
 
 class HocPhiTheoChuongTrinhDaoTao extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('hoc_phi_theo_chuong_trinh_dao_tao', function (Blueprint $table) {
-            $table->integer('ma_mon_hoc');
+            $table->integer('ma_mon_hoc')->unsigned();
 
-            $table->integer('ma_lop');
+            $table->integer('ma_lop')->unsigned();
 
-            $table->integer('so_tien');
+            $table->integer('so_tien')->unsigned();
 
             $table->primary(['ma_mon_hoc', 'ma_lop']);
 
@@ -30,11 +26,7 @@ class HocPhiTheoChuongTrinhDaoTao extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('hoc_phi_theo_chuong_trinh_dao_tao');

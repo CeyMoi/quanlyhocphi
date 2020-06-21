@@ -6,15 +6,11 @@ use Illuminate\Database\Migrations\Migration;
 
 class HocPhi extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+   
     public function up()
     {
         Schema::create('hoc_phi', function (Blueprint $table) {
-            $table->integer('ma_sinh_vien');
+            $table->integer('ma_sinh_vien')->unsigned();
 
             $table->integer('tong_hoc_phi');
 
@@ -27,11 +23,7 @@ class HocPhi extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+   
     public function down()
     {
         Schema::dropIfExists('hoc_phi');

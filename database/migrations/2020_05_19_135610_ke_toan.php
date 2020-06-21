@@ -6,15 +6,11 @@ use Illuminate\Database\Migrations\Migration;
 
 class KeToan extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    
     public function up()
     {
         Schema::create('ke_toan', function (Blueprint $table) {
-            $table->integer('ma_ke_toan');
+            $table->integer('ma_ke_toan')->unsigned();
 
             $table->string('email',100)->unique();
 
@@ -26,7 +22,7 @@ class KeToan extends Migration
 
             $table->string('dia_chi',100);
 
-            $table->integer('so_dien_thoai');
+            $table->integer('so_dien_thoai')->unsigned();
 
             $table->boolean('gioi_tinh');
 
@@ -36,11 +32,7 @@ class KeToan extends Migration
          });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+  
     public function down()
     {
         Schema::dropIfExists('ke_toan');

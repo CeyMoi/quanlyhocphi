@@ -6,21 +6,17 @@ use Illuminate\Database\Migrations\Migration;
 
 class MonHoc extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+   
     public function up()
     {
         Schema::create('mon_hoc', function (Blueprint $table) {
-            $table->integer('ma_mon_hoc');
+            $table->integer('ma_mon_hoc')->unsigned();
 
             $table->string('ten_mon_hoc');
 
-            $table->integer('ma_nganh');
+            $table->integer('ma_nganh')->unsigned();
 
-            $table->integer('ma_khoa');
+            $table->integer('ma_khoa')->unsigned();
 
             $table->primary('ma_mon_hoc');
 
@@ -32,11 +28,7 @@ class MonHoc extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('mon_hoc');

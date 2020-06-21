@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Lop extends Model
+class Khoa extends Model
 {
-    protected $table = 'lop';
-    protected $primaryKey = 'ma_lop';
+    protected $table = 'khoa';
+    protected $primaryKey = 'ma_khoa';
     public $timestamps = false;
 }
