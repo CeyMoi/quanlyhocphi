@@ -23,7 +23,7 @@ Route::group(['prefix' => 'client', 'namespace' => 'Client', 'as' => 'client.'],
 
 		Route::get('logout', function() {
 			\Auth::guard('sinh_vien')->logout();
-			return redirect()->route('client.login');
+			return redirect()->route('client.auth.login');
 		})->name('logout');
 
 		Route::get('profile', 'ProfileController@index')->name('profile.index');

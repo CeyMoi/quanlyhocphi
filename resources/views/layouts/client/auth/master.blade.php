@@ -1,108 +1,48 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="{{ asset('assets/client/img/basic/favicon.ico') }}" type="image/x-icon">
     <title>@yield('title', config('app.name'))</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/client/css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link href="{{ asset('assets/vendor/fonts/circular-std/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/libs/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/fontawesome/css/fontawesome-all.css') }}">
     <style>
-        .loader {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #F5F8FA;
-            z-index: 9998;
-            text-align: center;
-        }
+        html,
+    body {
+        height: 100%;
+    }
 
-        .plane-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-        }
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
     </style>
-    <!-- Js -->
-    <script>(function(w,d,u){w.readyQ=[];w.bindReadyQ=[];function p(x,y){if(x=="ready"){w.bindReadyQ.push(y);}else{w.readyQ.push(x);}};var a={ready:p,bind:p};w.$=w.jQuery=function(f){if(f===d||f===u){return a}else{p(f)}}})(window,document)</script>
 </head>
-<body class="light">
-<!-- Pre loader -->
-<div id="loader" class="loader">
-    <div class="plane-container">
-        <div class="preloader-wrapper small active">
-            <div class="spinner-layer spinner-blue">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-            </div>
 
-            <div class="spinner-layer spinner-red">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
+<body>
+    <div class="splash-container">
+        <div class="card ">
+            <div class="card-header text-center"><a href="#"><img class="logo-img" src="{{ asset('assets/images/logo.png') }}" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-body">
+                @yield('content')
             </div>
-            </div>
-
-            <div class="spinner-layer spinner-yellow">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-            </div>
-
-            <div class="spinner-layer spinner-green">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="app">
-<main>
-    <div id="primary" class="p-t-b-100 height-full">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mx-md-auto paper-card">
-                    <div class="text-center">
-                        <img src="{{ asset('assets/client/img/dummy/u4.png') }}" alt="">
-                        <h3 class="mt-2">Welcome Back</h3>
-                        {{-- <p class="p-t-b-20">Hey Soldier welcome back signin now there is lot of new stuff waiting
-                            for you</p> --}}
-                    </div>
-                    @yield('content')
+            <div class="card-footer bg-white p-0  ">
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="#" class="footer-link">Create An Account</a></div>
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="#" class="footer-link">Forgot Password</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- #primary -->
-</main>
-<!-- Add the sidebar's background. This div must be placed
-         immediately after the control sidebar -->
-<div class="control-sidebar-bg shadow white fixed"></div>
-</div>
-<!--/#app -->
-<script src="{{ asset('assets/client/js/app.js') }}"></script>
-<script>(function($,d){$.each(readyQ,function(i,f){$(f)});$.each(bindReadyQ,function(i,f){$(d).bind("ready",f)})})(jQuery,document)</script>
-</body>
+    <script src="{{ asset('assets/vendor/jquery/jquery-3.3.1.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.js') }}" type="text/javascript"></script>
+
 </html>

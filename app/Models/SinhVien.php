@@ -20,6 +20,7 @@ class SinhVien extends Authenticatable
     protected $hidden = ['mat_khau'];
 
     protected $dates = ['ngay_sinh'];
+    protected $rememberTokenName = false;
 
     public function getAuthPassword()
     {

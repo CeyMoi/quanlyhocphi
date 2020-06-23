@@ -11,7 +11,7 @@
 	               <li class="list-group-item">
 	                  <a href="#">
 	                      <div class="image mr-3  float-left">
-	                          <img class="user_avatar" src="{{ asset('assets/client/img/dummy/u3.png') }}" alt="{{ $user->ten_sinh_vien }}">
+	                          <img class="user_avatar" src="{{ asset('assets/images/avatar-1.jpg') }}" alt="{{ $user->ten_sinh_vien }}">
 	                      </div>
 	                      <h6 class="p-t-10">{{ $user->ten_sinh_vien }}</h6>
 	                      <span><i class="icon-date_range"></i>{{ $user->ngay_sinh->format('d-m-Y') }}</span>
@@ -36,20 +36,20 @@
 					@if (Session::has('error'))
 						<div class="alert alert-success">{{Session::get('error')}}</div>
 					@endif
-					<form action="{{ route('client.profile.password') }}" method="post">
+					<form action="{{ route('client.profile.password') }}" method="post" class="{{ $errors->has('password') ? 'was-validated' : '' }}">
 						{{ csrf_field() }}
 						<div class="form-group">
 							<label for="password">Mật khẩu cũ</label>
 							<input type="password" name="password" class="form-control">
 							@if ($errors->has('password'))
-								<span>{{$errors->first('password')}}</span>
+								<div class="valid-feedback">{{$errors->first('password')}}</div>
 							@endif
 						</div>
 						<div class="form-group">
 							<label for="password_new">Mật khẩu mới</label>
 							<input type="password" name="password_new" class="form-control">
 							@if ($errors->has('password_new'))
-								<span>{{$errors->first('password_new')}}</span>
+								<div class="valid-feedback">{{$errors->first('password_new')}}</iv>
 							@endif
 						</div>
 						<div class="form-group">
