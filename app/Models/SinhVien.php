@@ -31,4 +31,14 @@ class SinhVien extends Authenticatable
     {
     	return $this->belongsTo('App\Models\Lop', 'ma_lop');
     }
+
+    public function hoaDons()
+    {
+        return $this->hasMany('App\Models\HoaDon', 'ma_sinh_vien');
+    }
+
+    public function getFullName()
+    {
+        return $this->ho_sinh_vien . ' ' .$this->ten_sinh_vien;
+    }
 }
