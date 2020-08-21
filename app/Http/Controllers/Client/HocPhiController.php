@@ -16,14 +16,14 @@ class HocPhiController extends Controller
     		'theo_nam' => $student->lop->nganh->hoc_phi_theo_thang * 10,
     		'current_year' => $student->hoaDons()->whereYear('ngay_dong', date('Y'))->sum('so_tien_dong'),
     		'total' => $student->hoaDons->sum('so_tien_dong'),
-    	];
+		];
     	if ($hoc_phi['current_year'] > $hoc_phi['theo_nam']) {
     		$hoc_phi['status'] = 'Thừa';
     	} else if ($hoc_phi['current_year'] == $hoc_phi['theo_nam']) {
     		$hoc_phi['status'] = 'Hoàn thành';
     	} else {
     		$hoc_phi['status'] = 'Nợ';
-    	}
+		}
     	return view('client.hoc-phi.index', compact('student', 'hoc_phi'));
     }
 }

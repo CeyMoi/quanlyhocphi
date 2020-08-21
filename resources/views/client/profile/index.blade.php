@@ -11,7 +11,7 @@
 	               <li class="list-group-item">
 	                  <a href="#">
 	                      <div class="image mr-3  float-left">
-	                          <img class="user_avatar" src="{{ asset('assets/images/avatar-1.jpg') }}" alt="{{ $user->ten_sinh_vien }}">
+	                          <img class="user_avatar" style="width: 100px" src="{{ asset('assets/images/avatar-1.jpg') }}" alt="{{ $user->ten_sinh_vien }}">
 	                      </div>
 	                      <h6 class="p-t-10">{{ $user->ten_sinh_vien }}</h6>
 	                      <span><i class="icon-date_range"></i>{{ $user->ngay_sinh->format('d-m-Y') }}</span>

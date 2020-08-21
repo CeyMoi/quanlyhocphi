@@ -29,15 +29,13 @@
 <body>
     <div class="splash-container">
         <div class="card ">
-            <div class="card-header text-center"><a href="#"><img class="logo-img" src="{{ asset('assets/images/logo.png') }}" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-header text-center"><a href="#"><img class="logo-img" style="width: 100%" src="{{ asset('assets/images/logo.png') }}" alt="logo"></a><span class="splash-description"></span></div>
             <div class="card-body">
                 @yield('content')
             </div>
-            <div class="card-footer bg-white p-0  ">
+            <div class="card-footer bg-white p-0 d-flex">
                 <div class="card-footer-item card-footer-item-bordered">
-                    <a href="#" class="footer-link">Create An Account</a></div>
-                <div class="card-footer-item card-footer-item-bordered">
-                    <a href="#" class="footer-link">Forgot Password</a>
+                    <a href="{{ route('client.auth.forgot.index') }}" class="footer-link">Quên mật khẩu</a>
                 </div>
             </div>
         </div>
