@@ -9,11 +9,10 @@
     <link href="{{ asset('assets/vendor/fonts/circular-std/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/libs/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/fontawesome/css/fontawesome-all.css') }}">
-    <style type="text/css">
-    html,
+    <style>
+        html,
     body {
         height: 100%;
-        font-family: 'Times New Roman' !important, Times, serif;
     }
 
     body {
@@ -33,11 +32,6 @@
             <div class="card-header text-center"><a href="#"><img class="logo-img" style="width: 100%" src="{{ asset('assets/images/logo.png') }}" alt="logo"></a><span class="splash-description"></span></div>
             <div class="card-body">
                 @yield('content')
-            </div>
-            <div class="card-footer bg-white p-0 d-flex">
-                <div class="card-footer-item card-footer-item-bordered">
-                    <a href="{{ route('client.auth.forgot.index') }}" class="footer-link">Quên mật khẩu</a>
-                </div>
             </div>
         </div>
     </div>

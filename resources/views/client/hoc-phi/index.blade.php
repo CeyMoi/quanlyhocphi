@@ -33,10 +33,10 @@
 							<strong class="s-12">Học phí theo năm</strong>
 							<span class="float-right s-12">{{ number_format($hoc_phi['theo_nam']) }}</span>
 						</li>
-						<li class="list-group-item">
+						<!-- <li class="list-group-item">
 							<strong class="s-12">Số tiền đóng trong năm</strong>
 							<span class="float-right s-12">{{ number_format($hoc_phi['current_year']) }}</span>
-						</li>
+						</li> -->
 						<li class="list-group-item">
 							<strong class="s-12">Tổng số tiền đã đóng</strong>
 							<span class="float-right s-12">{{ number_format($hoc_phi['total']) }}</span>

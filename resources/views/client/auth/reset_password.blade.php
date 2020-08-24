@@ -1,4 +1,4 @@
-@extends('layouts.client.auth.master')
+@extends('layouts.client.auth.master2')
 @section('title', 'Cập nhật mật khẩu')
 @section('content')
 <form action="{{ route('client.auth.reset_password.store') }}" method="post">

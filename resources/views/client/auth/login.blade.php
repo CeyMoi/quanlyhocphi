@@ -14,7 +14,7 @@
     @endif
     <div class="form-group has-icon"><i class="icon-envelope-o"></i>
         <input type="text" name="email" class="form-control form-control-lg"
-               placeholder="Nhập Email">
+               placeholder="Nhập Email" value="{{old('email')}}">
     </div>
     @if($errors->has('password'))
         {{ $errors->first('password') }}
