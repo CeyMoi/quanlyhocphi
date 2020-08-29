@@ -26,4 +26,5 @@
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/vendor/slimscroll/jquery.slimscroll.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/libs/js/main-js.js') }}" type="text/javascript"></script>
+    @stack('scripts')
 </html>

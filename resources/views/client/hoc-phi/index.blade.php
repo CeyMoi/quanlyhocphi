@@ -31,7 +31,7 @@
 						</li>
 						<li class="list-group-item">
 							<strong class="s-12">Học phí theo năm</strong>
-							<span class="float-right s-12">{{ number_format($hoc_phi['theo_nam']) }}</span>
+							<span class="float-right s-12" id="phai_dong">{{ number_format($hoc_phi['theo_nam']) }}</span>
 						</li>
 						<!-- <li class="list-group-item">
 							<strong class="s-12">Số tiền đóng trong năm</strong>
@@ -39,7 +39,7 @@
 						</li> -->
 						<li class="list-group-item">
 							<strong class="s-12">Tổng số tiền đã đóng</strong>
-							<span class="float-right s-12">{{ number_format($hoc_phi['total']) }}</span>
+							<span class="float-right s-12" id="da_dong">{{ number_format($hoc_phi['total']) }}</span>
 						</li>
 					</ul>
 				</div>
@@ -71,7 +71,17 @@
 					<tfoot>
 						<tr>
 							<td colspan="3" class="text-right">
-								Tình trạng: {{ $hoc_phi['status'] }}
+								
+								@php
+									$tien = $hoc_phi['theo_nam'] - $hoc_phi['total'];
+								@endphp
+								@if($tien < 0)
+									Thừa: {{number_format(abs($tien))}} VND
+								@elseif($tien > 0)
+									Nợ: {{number_format(abs($tien))}} VND
+								@else
+									Tình trạng: Hoàn Thành
+								@endif 
 							</td>
 						</tr>
 					</tfoot>

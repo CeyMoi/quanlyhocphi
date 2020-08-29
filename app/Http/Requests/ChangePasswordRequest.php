@@ -34,7 +34,7 @@ class ChangePasswordRequest extends FormRequest
         return [
             'required' => ':attribute không được để trống',
             'min' => ':attribute lớn hơn :min ký tự',
-            'confirmed' => 'Mật khẩu mới không khớp'
+            'confirmed' => ':attribute không khớp'
         ];
     }
 
