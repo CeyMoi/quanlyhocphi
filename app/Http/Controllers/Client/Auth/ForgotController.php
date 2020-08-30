@@ -31,7 +31,7 @@ class ForgotController extends Controller
     {
         $sinhVien = SinhVien::where('token_hash', $token)->first();
         if (empty($sinhVien)) {
-            return \redirect()->route('client.auth.forgot.index')->with('error', 'Token không hợp lệ');
+            return \redirect()->route('client.auth.forgot.index')->with('error', 'Mã token không hợp lệ');
         }
         return view('client.auth.reset_password', compact('token'));
     }
@@ -42,7 +42,7 @@ class ForgotController extends Controller
         $password = $request->input('password');
         $sinhVien = SinhVien::where('token_hash', $tokenHash)->first();
         if (empty($sinhVien)) {
-            return \redirect()->back()->with('error', 'Token không hợp lệ!');
+            return \redirect()->back()->with('error', 'Mã token không hợp lệ');
         }
         $sinhVien->mat_khau = bcrypt($password);
         $sinhVien->token_hash = sha1(time());
