@@ -10,11 +10,11 @@ class ChuongTrinhDaoTao extends Migration
     public function up()
     {
         Schema::create('chuong_trinh_dao_tao', function (Blueprint $table) {
-            $table->integer('ma_nganh')->unsigned();
+            $table->increments('ma_nganh');
 
             $table->string('ten_nganh', 100);
 
-            $table->primary('ma_nganh');
+            $table->string('hoc_phi_theo_thang', 100);
         });
     }
 

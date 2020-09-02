@@ -17,7 +17,7 @@ class CheckAuthClient
     public function handle($request, Closure $next, $guard = 'sinh_vien')
     {
         if (!\Auth::guard($guard)->check()) {
-            return redirect()->route('client.auth.login');
+            return redirect()->route('client.auth.login')->with('email',$request->email);
         }
         return $next($request);
     }

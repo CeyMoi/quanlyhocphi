@@ -8,10 +8,6 @@
 
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
   <link href="{{asset('css/menu.css')}}" rel="stylesheet" />
-
-
-
-
 </head>
 
 <body>

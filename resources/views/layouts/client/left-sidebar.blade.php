@@ -1,7 +1,7 @@
 <div class="nav-left-sidebar sidebar-dark">
     <div class="menu-list">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+            <a class="d-xl-none d-lg-none" href="#">Trang chủ</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -11,12 +11,18 @@
                         Menu
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link {{ request()->routeIs('client.index') ? 'active' : '' }}" href="{{ route('client.index') }}"><i class="fa fa-fw fa-home"></i>Dashboard <span class="badge badge-success">6</span></a>
+                        <a class="nav-link {{ request()->routeIs('client.index') ? 'active' : '' }}" href="{{ route('client.index') }}"><i class="fa fa-fw fa-home"></i>Trang chủ <span class="badge badge-success">6</span></a>
                     </li>
                     <li>
                         <a class="nav-link {{ request()->routeIs('client.profile*') ? 'active' : '' }}" href="{{ route('client.profile.index') }}">
                             <i class="fa fa-fw fa-user-circle"></i>
                             <span>Thông tin cá nhân</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link {{ request()->routeIs('client.hoc-phi*') ? 'active' : '' }}" href="{{ route('client.hoc-phi') }}">
+                            <i class="fa fa-fw fa-money-bill-alt"></i>
+                            <span>Thông tin học phí</span>
                         </a>
                     </li>
                     <li>

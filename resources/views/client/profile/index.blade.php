@@ -11,7 +11,7 @@
 	               <li class="list-group-item">
 	                  <a href="#">
 	                      <div class="image mr-3  float-left">
-	                          <img class="user_avatar" src="{{ asset('assets/images/avatar-1.jpg') }}" alt="{{ $user->ten_sinh_vien }}">
+	                          <img class="user_avatar" style="width: 100px" src="{{ asset('assets/images/avatar-1.jpg') }}" alt="{{ $user->ten_sinh_vien }}">
 	                      </div>
 	                      <h6 class="p-t-10">{{ $user->ten_sinh_vien }}</h6>
 	                      <span><i class="icon-date_range"></i>{{ $user->ngay_sinh->format('d-m-Y') }}</span>
@@ -42,14 +42,26 @@
 							<label for="password">Mật khẩu cũ</label>
 							<input type="password" name="password" class="form-control">
 							@if ($errors->has('password'))
-								<div class="valid-feedback">{{$errors->first('password')}}</div>
+								<div class="alert alert-danger">
+								<ul>
+									@foreach ($errors->get('password') as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+								</div>
 							@endif
 						</div>
 						<div class="form-group">
 							<label for="password_new">Mật khẩu mới</label>
 							<input type="password" name="password_new" class="form-control">
 							@if ($errors->has('password_new'))
-								<div class="valid-feedback">{{$errors->first('password_new')}}</iv>
+								<div class="alert alert-danger">
+								<ul>
+									@foreach ($errors->get('password_new') as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+								</div>
 							@endif
 						</div>
 						<div class="form-group">

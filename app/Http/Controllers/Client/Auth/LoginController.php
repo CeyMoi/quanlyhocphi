@@ -11,7 +11,7 @@ class LoginController extends Controller
 	use AuthenticatesUsers;
 
 
-	protected $redirectTo = '/client';
+	protected $redirectTo = '/client/profile';
 
     public function index()
     {

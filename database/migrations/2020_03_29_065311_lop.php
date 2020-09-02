@@ -6,19 +6,17 @@ use Illuminate\Database\Migrations\Migration;
 
 class Lop extends Migration
 {
-    
+   
     public function up()
     {
         Schema::create('lop', function (Blueprint $table) {
-            $table->integer('ma_lop')->unsigned();
+            $table->increments('ma_lop');
 
             $table->string('ten_lop', 100);
 
             $table->integer('ma_khoa')->unsigned();
 
             $table->integer('ma_nganh')->unsigned();
-
-            $table->primary('ma_lop');
 
             $table->foreign('ma_khoa')
                 ->references('ma_khoa')->on('khoa');
